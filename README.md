@@ -1,0 +1,4 @@
+# GoGetShare
+
+Prerequistie versions:
+Cucumber : 
