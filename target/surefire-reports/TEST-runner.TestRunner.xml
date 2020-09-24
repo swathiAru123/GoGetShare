@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="runner.TestRunner" time="0.346" tests="7" errors="0" skipped="7" failures="0">
+  <properties>
+    <property name="java.specification.version" value="15"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\jsaba\eclipse-workspace\GoGetShare\target\test-classes;C:\Users\jsaba\eclipse-workspace\GoGetShare\target\classes;C:\Users\jsaba\.m2\repository\io\cucumber\cucumber-java\2.4.0\cucumber-java-2.4.0.jar;C:\Users\jsaba\.m2\repository\io\cucumber\cucumber-core\2.4.0\cucumber-core-2.4.0.jar;C:\Users\jsaba\.m2\repository\info\cukes\cucumber-html\0.2.6\cucumber-html-0.2.6.jar;C:\Users\jsaba\.m2\repository\io\cucumber\cucumber-jvm-deps\1.0.6\cucumber-jvm-deps-1.0.6.jar;C:\Users\jsaba\.m2\repository\io\cucumber\gherkin\5.0.0\gherkin-5.0.0.jar;C:\Users\jsaba\.m2\repository\io\cucumber\tag-expressions\1.1.1\tag-expressions-1.1.1.jar;C:\Users\jsaba\.m2\repository\io\cucumber\cucumber-junit\2.4.0\cucumber-junit-2.4.0.jar;C:\Users\jsaba\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\jsaba\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\jsaba\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\jsaba\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\jsaba\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\jsaba\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\jsaba\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\jsaba\.m2\repository\com\google\guava\guava\25.0-jre\guava-25.0-jre.jar;C:\Users\jsaba\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\jsaba\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\jsaba\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\jsaba\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\jsaba\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\jsaba\.m2\repository\com\squareup\okhttp3\okhttp\3.11.0\okhttp-3.11.0.jar;C:\Users\jsaba\.m2\repository\com\squareup\okio\okio\1.14.0\okio-1.14.0.jar;C:\Users\jsaba\.m2\repository\org\apache\logging\log4j\log4j-api\2.13.3\log4j-api-2.13.3.jar;C:\Users\jsaba\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\jsaba\.m2\repository\org\seleniumhq\webdriver\webdriver-support\0.9.7376\webdriver-support-0.9.7376.jar;C:\Users\jsaba\.m2\repository\org\seleniumhq\webdriver\webdriver-common\0.9.7376\webdriver-common-0.9.7376.jar;C:\Users\jsaba\.m2\repository\org\hamcrest\hamcrest-all\1.1\hamcrest-all-1.1.jar;C:\Users\jsaba\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.5\selenium-support-3.141.5.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Australia/Sydney"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="15"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="AU"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-15\bin"/>
+    <property name="sun.java.command" value="C:\Users\jsaba\AppData\Local\Temp\surefire14209398143103465584\surefirebooter4284050395982047943.jar C:\Users\jsaba\AppData\Local\Temp\surefire14209398143103465584 2020-09-24T08-24-00_862-jvmRun1 surefire17570963349189531881tmp surefire_018179105399743936533tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\jsaba\eclipse-workspace\GoGetShare\target\test-classes;C:\Users\jsaba\eclipse-workspace\GoGetShare\target\classes;C:\Users\jsaba\.m2\repository\io\cucumber\cucumber-java\2.4.0\cucumber-java-2.4.0.jar;C:\Users\jsaba\.m2\repository\io\cucumber\cucumber-core\2.4.0\cucumber-core-2.4.0.jar;C:\Users\jsaba\.m2\repository\info\cukes\cucumber-html\0.2.6\cucumber-html-0.2.6.jar;C:\Users\jsaba\.m2\repository\io\cucumber\cucumber-jvm-deps\1.0.6\cucumber-jvm-deps-1.0.6.jar;C:\Users\jsaba\.m2\repository\io\cucumber\gherkin\5.0.0\gherkin-5.0.0.jar;C:\Users\jsaba\.m2\repository\io\cucumber\tag-expressions\1.1.1\tag-expressions-1.1.1.jar;C:\Users\jsaba\.m2\repository\io\cucumber\cucumber-junit\2.4.0\cucumber-junit-2.4.0.jar;C:\Users\jsaba\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\jsaba\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\jsaba\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\jsaba\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\jsaba\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\jsaba\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\jsaba\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\jsaba\.m2\repository\com\google\guava\guava\25.0-jre\guava-25.0-jre.jar;C:\Users\jsaba\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\jsaba\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\jsaba\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\jsaba\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\jsaba\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\jsaba\.m2\repository\com\squareup\okhttp3\okhttp\3.11.0\okhttp-3.11.0.jar;C:\Users\jsaba\.m2\repository\com\squareup\okio\okio\1.14.0\okio-1.14.0.jar;C:\Users\jsaba\.m2\repository\org\apache\logging\log4j\log4j-api\2.13.3\log4j-api-2.13.3.jar;C:\Users\jsaba\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\jsaba\.m2\repository\org\seleniumhq\webdriver\webdriver-support\0.9.7376\webdriver-support-0.9.7376.jar;C:\Users\jsaba\.m2\repository\org\seleniumhq\webdriver\webdriver-common\0.9.7376\webdriver-common-0.9.7376.jar;C:\Users\jsaba\.m2\repository\org\hamcrest\hamcrest-all\1.1\hamcrest-all-1.1.jar;C:\Users\jsaba\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.5\selenium-support-3.141.5.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\jsaba"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2020-09-15"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-15"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\jsaba\eclipse-workspace\GoGetShare"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\jsaba\AppData\Local\Temp\surefire14209398143103465584\surefirebooter4284050395982047943.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="15+36-1562"/>
+    <property name="user.name" value="jsaba"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\jsaba\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\jsaba\AppData\Local\Temp\"/>
+    <property name="java.version" value="15"/>
+    <property name="user.dir" value="C:\Users\jsaba\eclipse-workspace\GoGetShare"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-15\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-15\bin;C:\Users\jsaba\AppData\Local\Microsoft\WindowsApps;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="15+36-1562"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="59.0"/>
+  </properties>
+  <testcase name="Verify HomePage Functionality" classname="GoGetShare application functionality verification" time="0">
+    <skipped message="The step &quot;Launch GoGetShare Application&quot; is undefined"/>
+  </testcase>
+  <testcase name="Verify HomePage Functionality" classname="GoGetShare application functionality verification" time="0">
+    <skipped message="The step &quot;Login to GoGetShare Application&quot; is undefined"/>
+  </testcase>
+  <testcase name="Verify HomePage Functionality" classname="GoGetShare application functionality verification" time="0">
+    <skipped message="The step &quot;Verify Location and Datepicker box functionality&quot; is undefined"/>
+  </testcase>
+  <testcase name="Verify HomePage Functionality" classname="GoGetShare application functionality verification" time="0">
+    <skipped message="The step &quot;Verify list of available cars are displaying in home page&quot; is undefined"/>
+  </testcase>
+  <testcase name="Verify availability bars are displayed" classname="GoGetShare application functionality verification" time="0">
+    <skipped message="The step &quot;Launch GoGetShare Application&quot; is undefined"/>
+  </testcase>
+  <testcase name="Verify availability bars are displayed" classname="GoGetShare application functionality verification" time="0">
+    <skipped message="The step &quot;Login to GoGetShare Application&quot; is undefined"/>
+  </testcase>
+  <testcase name="Verify availability bars are displayed" classname="GoGetShare application functionality verification" time="0">
+    <skipped message="The step &quot;Verify availability bars are displaying in home page&quot; is undefined"/>
+  </testcase>
+</testsuite>
