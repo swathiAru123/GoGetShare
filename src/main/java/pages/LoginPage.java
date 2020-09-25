@@ -1,29 +1,38 @@
 package pages;
 
-import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.apache.log4j.Logger;
 import pageObjects.PageObjects;
+import utils.Utils;
 
+/**
+ * @author Swathi
+ * LoginPage class logins GoGetCarShare application 
+ * providing user credentials  
+ */
 public class LoginPage extends PageObjects{
 
-	WebDriver driver;
-	public void launchGoGetShareApplication()
+	private static Logger logger=Logger.getLogger(LoginPage.class);
+	private Utils utils;
+
+	public LoginPage()
 	{
-		System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
-		driver=new ChromeDriver();	
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("https://www.gogetshare.com");
+		this.utils=new Utils();
 	}
 
-	public void loginToGoGetApplication()
+	public void loginToGoGetApplication(String username,String password)
 	{
-		txtBox_userName.sendKeys("name");
-		txtBox_password.sendKeys("password");
-		btn_login.click();
+		try
+		{
+			utils.sendKeys(txtBox_userName, username);
+			utils.sendKeys(txtBox_password, password);
+			utils.clickOnElement(btn_login);
+			logger.info("User is able to login");
+		}
+		catch(Exception e)
+		{
+			logger.error("User is not able to login");
+			throw (e);
+		}
 	}
-
-
 
 }

@@ -12,11 +12,16 @@ import pages.HomePage;
 import pages.LoginPage;
 import pages.PodDetailsPage;
 
+/**
+ * @author Swathi
+ * PageObject class initializes the objects of Home page, Login page 
+ * and Pod details page
+ */
 public class GoGetShareSteps {
 	private LoginPage loginPage;
 	private HomePage homePage;
 	private PodDetailsPage podDetailsPage;
-	WebDriver driver;
+	private WebDriver driver;
 
 	public GoGetShareSteps()
 	{
@@ -25,20 +30,20 @@ public class GoGetShareSteps {
 		this.podDetailsPage=new PodDetailsPage();
 	}
 
-	@Given("^Launch GoGetShare Application")
-	public void launchGoGetShareApplication()
+	@Given("^Launch GoGetShare Application \"([^\"]*)\"")
+	public void launchGoGetShareApplication(String url)
 	{
 		System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
 		driver=new ChromeDriver();	
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("https://www.gogetshare.com");
+		driver.get(url);
 	}
 
-	@And("^Login to GoGetShare Application")
-	public void loginToGoGetApplication()
+	@And("^Login to GoGetShare Application entering \"([^\"]*)\" and \"([^\"]*)\"")
+	public void loginToGoGetApplication(String username,String password)
 	{
-		loginPage.loginToGoGetApplication();
+		loginPage.loginToGoGetApplication(username,password);
 	}
 
 	@And("^Verify Location and Datepicker box functionality")
@@ -88,29 +93,28 @@ public class GoGetShareSteps {
 	{
 		homePage.choseStartAndEndTime(startTime,endTime);
 	}
-	
+
 	@Then("^Verify error message \"([^\"]*)\" displays on entering past date range")
 	public void verifyErrorMessageOnChoosingPastDateRange(String expectedErrorMsg) throws Exception
 	{
 		homePage.verifyErrorMessageOnChoosingPastDateRange(expectedErrorMsg);
 	}
-	
+
 	@Then("^Choose car \"([^\"]*)\"")
 	public void choosePreferredCarfromListOfAvailableCars(String preferredCar) throws Exception
 	{
 		homePage.choosePreferredCarfromListOfAvailableCars(preferredCar);
 	}
-	
+
 	@And("^Verify user is navigated to Pod details page by verifying page title \"([^\"]*)\"")
 	public void verifyUserIsOnPodDetailsPage(String expectedTitle) throws Exception
 	{
 		podDetailsPage.verifyUserIsOnPodDetailsPage(expectedTitle);
 	}
-	
+
 	@And("^Verify car details in Pod Details page")
 	public void verifyCarDetailsInPodDetailsPage() throws Exception
 	{
 		podDetailsPage.verifyCarDetailsInPodDetailsPage();
 	}
-	
 }

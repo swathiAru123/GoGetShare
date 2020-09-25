@@ -3,37 +3,50 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import pageObjects.PageObjects;
 import utils.Utils;
-
 import org.apache.log4j.Logger;
 
+/**
+ * @author Swathi
+ * PodDetailsPage class verifies the details of the car and 
+ * estimated cost of the car
+ */
 public class PodDetailsPage extends PageObjects{
+	private WebDriver driver;
+	private static Logger logger=Logger.getLogger(PodDetailsPage.class);
+	private Utils utils;
 
-  WebDriver driver;
-  static Logger logger=Logger.getLogger(HomePage.class);
-  Utils methods=new Utils();
-
-  public void verifyUserIsOnPodDetailsPage(String expectedTitle)
-  {
-		String actualTitle=driver.getTitle();
-		methods.assertEquals(expectedTitle, actualTitle);
-		logger.info("User is on Pod details page");
+	public PodDetailsPage()
+	{
+		this.utils=new Utils();
 	}
-	
+
+	public void verifyUserIsOnPodDetailsPage(String expectedTitle)
+	{
+		try {
+		String actualTitle=driver.getTitle();
+		utils.assertEquals(expectedTitle, actualTitle);
+		logger.info("User is on Pod details page");
+		}
+		catch(Exception e){
+			logger.error("User is not in Pod details page");
+			throw (e);
+		}
+	}
+
 	public void verifyCarDetailsInPodDetailsPage() throws Exception
 	{
 		try
 		{
 			String carName=txt_carName.getText();
-			logger.info("Car name is "+ carName);
 			String estimatedCost=txt_estimatedCost.getText();
-			logger.info("Estimated cost is "+ estimatedCost);
 			btn_Booking.isDisplayed();
-			logger.info("Booking button is displayed");
+			logger.info("Car details are available"+carName+ "," + estimatedCost);
 		}	
 		catch(Exception e)
 		{
+			logger.error("Car details are not available");
 			throw (e);
 		}
 	}
-	
-   }
+
+}

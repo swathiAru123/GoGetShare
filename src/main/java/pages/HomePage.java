@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import java.util.List;
 import pageObjects.PageObjects;
 import utils.Utils;
-
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -13,22 +12,35 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+/**
+ * @author Swathi
+ * HomePage class describes the location, date picker functionality and 
+ * list of available cars on the landing page
+ */
 public class HomePage extends PageObjects{
 
 	private WebDriver driver;
-	static Logger logger=Logger.getLogger(HomePage.class);
-	Utils methods=new Utils();
+	private static Logger logger=Logger.getLogger(HomePage.class);
+	private Utils utils;
 	WebDriverWait wait = new WebDriverWait(driver, 30);
+	private String availablityColourBar="Green";
+	private String bookedBySomeoneColourBar="Grey";
+	private String bookedByCurrentUserColourBar="Blue";
+
+	public HomePage()
+	{
+		this.utils=new Utils();
+	}
 
 	public void verifyLocationAndDatePickerBoxIsPresent() throws Exception
 	{ 
 		try {
-			methods.assertTrue(searchbox_location);
-			logger.info("Current location search box is displayed");
-			methods.assertTrue(calenderBox_date);	
-			logger.info("Date picker box is displayed");
+			utils.assertTrue(searchbox_location);
+			utils.assertTrue(calenderBox_date);	
+			logger.info("Current location search box and Date picker box is displayed");
 		}
 		catch (NoSuchElementException e) {
+			logger.error("Current location search box and Date picker box is not displayed");
 			throw (e);
 		}
 	}
@@ -37,11 +49,13 @@ public class HomePage extends PageObjects{
 	{
 		try
 		{
-			methods.clearText(searchbox_location);
-			methods.sendKeys(searchbox_location,location);
+			utils.clearText(searchbox_location);
+			utils.sendKeys(searchbox_location,location);
+			logger.info("Entered current location");
 		}
 		catch(Exception e)
 		{
+			logger.error("User is not able to enter the current location");
 			throw (e);
 		}
 	}
@@ -57,6 +71,7 @@ public class HomePage extends PageObjects{
 			}
 		}
 		catch (Exception e) {
+			logger.error("List of available cars are not displaying");
 			throw (e);
 		}
 	}
@@ -67,7 +82,7 @@ public class HomePage extends PageObjects{
 			for(int i=0;i<coloursOfAvailabilityBars.size();i++)
 			{
 				String colourBar=coloursOfAvailabilityBars.get(i).getAttribute("colourBar");
-				if((colourBar.equalsIgnoreCase("Grey"))||(colourBar.equalsIgnoreCase("Blue"))||(colourBar.equalsIgnoreCase("Green")))
+				if((colourBar.equalsIgnoreCase(bookedBySomeoneColourBar))||(colourBar.equalsIgnoreCase(bookedByCurrentUserColourBar))||(colourBar.equalsIgnoreCase(availablityColourBar)))
 				{
 					logger.info(colourBar+ " colour availability bar displays");
 				}
@@ -75,7 +90,7 @@ public class HomePage extends PageObjects{
 		}
 		catch(Exception e)
 		{
-			logger.info("Expected colour availability bar is not displaying");
+			logger.error("Expected colour availability bar is not displaying");
 			throw (e);
 		}
 	}
@@ -84,14 +99,13 @@ public class HomePage extends PageObjects{
 	{
 		try
 		{
-			methods.tapOnElement(driver,searchbox_location);
-			logger.info("User is able to tap on Current location field");
+			utils.tapOnElement(searchbox_location);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("Searchscreen")));
-			logger.info("User is able to navigate on tapping Current location field");
+			logger.info("User is able to navigate to searc on tapping lohcation field");
 		}
 		catch(NoSuchElementException e)
 		{
-			logger.error("User is not able to navigate on tapping Current location field");
+			logger.error("User is not able to navigate to search screen on tapping location field");
 			throw (e);
 		}
 	}
@@ -111,7 +125,6 @@ public class HomePage extends PageObjects{
 				if(locationFetched.equalsIgnoreCase(location))
 				{
 					locationList.get(i).click();
-					logger.info("Location is selected");
 				}
 				else
 				{
@@ -121,6 +134,7 @@ public class HomePage extends PageObjects{
 		}	
 		catch(Exception e)
 		{
+			logger.error("Current location not fetched");
 			throw (e);
 		}
 	}
@@ -129,16 +143,16 @@ public class HomePage extends PageObjects{
 	{
 		try
 		{
-			methods.clearText(searchbox_location);
-			methods.sendKeys(searchbox_location,specialChar);
-			methods.clickEnter(searchbox_location);
+			utils.clearText(searchbox_location);
+			utils.sendKeys(searchbox_location,specialChar);
+			utils.clickEnter(searchbox_location);
 			String actualErrormsg=errorMsg_noResults.getText();
-			methods.assertEquals(expectedErrorMsg,actualErrormsg);
+			utils.assertEquals(expectedErrorMsg,actualErrormsg);
 			logger.info(actualErrormsg+" message displays");
 		}	
 		catch(Exception e)
 		{
-			logger.info("Error message is not displaying");
+			logger.error("Error message is not displaying");
 			throw (e);
 		}
 	}
@@ -147,17 +161,16 @@ public class HomePage extends PageObjects{
 	{
 		try
 		{
-			methods.clickOnElement(calenderBox_date);
-
+			utils.clickOnElement(calenderBox_date);
 			//passing start time and end time as parameter in xpath
-			methods.scrollTo(driver, By.xpath("//li[contains(text(),'" + startTime + "')]"));
-			methods.scrollTo(driver, By.xpath("//li[contains(text(),'" + endTime + "')]"));
-
-			methods.clickOnElement(btn_Done);	
+			utils.scrollTo(By.xpath("//li[contains(text(),'" + startTime + "')]"));
+			utils.scrollTo(By.xpath("//li[contains(text(),'" + endTime + "')]"));
+			utils.clickOnElement(btn_Done);	
 			logger.info("Start and End time is chosen");
 		}	
 		catch(Exception e)
 		{
+			logger.error("User is not able to choose start and end time");
 			throw (e);
 		}
 	}
@@ -166,16 +179,17 @@ public class HomePage extends PageObjects{
 	{
 		try
 		{
-			methods.clickOnElement(calenderBox_date);
-			methods.scrollTo(driver, By.xpath("//li[contains(text(),'" + startDate + "')]"));
-			methods.scrollTo(driver, By.xpath("//li[contains(text(),'" + endDate + "')]"));
-			methods.clickOnElement(btn_Done);	
+			utils.clickOnElement(calenderBox_date);
+			utils.scrollTo(By.xpath("//li[contains(text(),'" + startDate + "')]"));
+			utils.scrollTo(By.xpath("//li[contains(text(),'" + endDate + "')]"));
+			utils.clickOnElement(btn_Done);	
 			String actualErrorMsg=errorMsg_futureDate.getText();
 			assertEquals(expectedErrorMsg, actualErrorMsg);
 			logger.info(expectedErrorMsg +" message displays");			
 		}	
 		catch(Exception e)
 		{
+			logger.error("Expected error message is not displaying on choosing past date range");
 			throw (e);
 		}
 	}
@@ -200,6 +214,7 @@ public class HomePage extends PageObjects{
 			}
 		}
 		catch (Exception e) {
+			logger.error("User is not able to chose the preferred car");
 			throw (e);
 		}
 	}
