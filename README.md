@@ -1,4 +1,8 @@
 # GoGetShare
 
 Prerequistie versions:
-Cucumber : 
+Cucumber verion: 2.4.0
+Selenium version: 3.141
+Git version: 2.28.0
+
+
